@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.dante.servicecomb.springboot</groupId>
+	<artifactId>servicecomb-saga</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<name>Springboot Servicecomb Saga</name>
+	<description>Servicecomb Saga Springboot</description>
+
+	<modules>
+		<module>sc-saga-eureka</module>
+		<module>sc-saga-account</module>
+		<module>sc-saga-storage</module>
+		<module>sc-saga-order</module>
+		<module>sc-saga-pay</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<guava.version>23.0</guava.version>
+		<druid.version>1.1.10</druid.version>
+		<servicecomb.pack.version>0.3.0</servicecomb.pack.version>
+		<netty.boringssl.version>2.0.7.Final</netty.boringssl.version>
+	</properties>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.3.RELEASE</version>
+	</parent>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Greenwich.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid-spring-boot-starter</artifactId>
+				<version>${druid.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.servicecomb.pack</groupId>
+				<artifactId>omega-spring-starter</artifactId>
+				<version>${servicecomb.pack.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.servicecomb.pack</groupId>
+				<artifactId>omega-transport-resttemplate</artifactId>
+				<version>${servicecomb.pack.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.servicecomb.pack</groupId>
+				<artifactId>omega-transport-feign</artifactId>
+				<version>${servicecomb.pack.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.netty</groupId>
+				<artifactId>netty-tcnative-boringssl-static</artifactId>
+				<version>${netty.boringssl.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-tcnative-boringssl-static</artifactId>
+		</dependency>
+	</dependencies>
+</project>

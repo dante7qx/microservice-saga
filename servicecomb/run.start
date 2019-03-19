@@ -1,0 +1,3 @@
+#!/bin/bash
+
+java -Dspring.profiles.active=prd -D"spring.datasource.url=jdbc:postgresql://localhost:5432/servicecomb_saga?useSSL=false" -Dspring.datasource.username=saga -Dspring.datasource.password=sagapwd -jar alpha-server-0.3.0-exec.jar

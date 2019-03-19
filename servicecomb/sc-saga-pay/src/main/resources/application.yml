@@ -1,0 +1,12 @@
+server:
+  port: 8804
+spring:
+  application:
+    name: sc-saga-pay
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/   
+alpha:
+  cluster: 
+    address: peer1:8080
